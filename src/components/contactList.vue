@@ -5,7 +5,7 @@
                 <span class="tool-ui-grid" :class=" { 'is-active': this.uiTypeGrid  } ">&#9783;</span>
                 <span class="tool-ui-grid" :class=" { 'is-active': !this.uiTypeGrid  } ">&#9776;</span>
             </div>
-            <div class="tool-ui" @click="sortContacts">
+            <div class="tool-ui" @click="switchSortOrder">
                 <span class="tool-ui-grid" v-if=" this.sortAsc ">&#8613;</span>
                 <span class="tool-ui-grid" v-else>&#8615;</span>
             </div>
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="wrapper-contacts" :class=" { 'show-as-list': !this.uiTypeGrid  } ">
-            <contact v-for="contact in list" :uiTypeGrid="uiTypeGrid" :contact="contact" :key="contact.id"></contact>
+            <contact v-for="contact in sortedAndFilteredList" :uiTypeGrid="uiTypeGrid" :contact="contact" :key="contact.id"></contact>
         </div>
     </div>
 </template>
@@ -23,14 +23,22 @@
     import contact from './contact'
     export default {
         name: 'contactList',
+        // Chilren list
         components: {
             contact
         },
+        // Value from parent
         props: ['list'],
+        // Dynamic data, rerender each time a variable change
         computed: {
             sortedAndFilteredList(){
+                //TODO
                 return this.list
             }
+        },
+        // Function executed when this component is mounted (after all rendering)
+        mounted(){
+            //TODO
         },
         data(){
             return {
@@ -46,10 +54,17 @@
                 this.uiTypeGrid = !this.uiTypeGrid;
             },
 
-            sortContacts(){
-                //TODO
+            switchSortOrder(){
+                this.sortAsc = !this.sortAsc;
             },
-            filterContacts(){
+
+            sortContacts(list, order){
+               
+                return list;
+            },
+            filterContacts(list){
+
+                return list;
                 //TODO
             }
         }

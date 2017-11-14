@@ -51,7 +51,6 @@ export default {
   },
   methods: {
     deleteContact() {
-      console.log("delete ", this.contact.id);
       //TODO
     }
   }
