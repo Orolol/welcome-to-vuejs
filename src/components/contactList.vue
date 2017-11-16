@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="wrapper-contacts" :class=" { 'show-as-list': !this.uiTypeGrid  } ">
-            <contact v-for="contact in sortedAndFilteredList" :uiTypeGrid="uiTypeGrid" :contact="contact" :key="contact.id"></contact>
+            <!-- SEE HUMAN TXT -->
         </div>
     </div>
 </template>
@@ -50,12 +50,8 @@
         },
         methods: {
 
-            switchGridLine() {
-                this.uiTypeGrid = !this.uiTypeGrid;
-            },
-
             switchSortOrder(){
-                this.sortAsc = !this.sortAsc;
+                // SEE HUMAN TXT
             },
 
             sortContacts(list, order){

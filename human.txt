@@ -42,3 +42,9 @@
             }.bind(this))
             //TODO
         },
+
+// CONTACT CARD - contact list
+<contact v-for="contact in sortedAndFilteredList" :uiTypeGrid="uiTypeGrid" :contact="contact" :key="contact.id"></contact>
+
+// GRID - contact list 
+this.sortAsc = !this.sortAsc;
